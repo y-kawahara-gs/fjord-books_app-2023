@@ -1,0 +1,18 @@
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/home/y-kawahara/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251010-56614-e59u sitelibdir\=./.gem.20251010-56614-e59u clean
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251010-56614-e59u sitelibdir\=./.gem.20251010-56614-e59u
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251010-56614-e59u sitelibdir\=./.gem.20251010-56614-e59u install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20251010-56614-e59u/bootsnap
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20251010-56614-e59u sitelibdir\=./.gem.20251010-56614-e59u clean
