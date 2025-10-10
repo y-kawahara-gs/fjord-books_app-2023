@@ -6,7 +6,7 @@
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-      <% showthisbook = t :Showthisbook%>
+      <% showthisbook = t :Showthisbook %>
       <%= link_to showthisbook, book %>
     </p>
   <% end %>
