@@ -1,0 +1,20 @@
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+/home/y-kawahara/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251007-100725-e09xl1 sitelibdir\=./.gem.20251007-100725-e09xl1 clean
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251007-100725-e09xl1 sitelibdir\=./.gem.20251007-100725-e09xl1
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251007-100725-e09xl1 sitelibdir\=./.gem.20251007-100725-e09xl1 install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20251007-100725-e09xl1/racc
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251007-100725-e09xl1 sitelibdir\=./.gem.20251007-100725-e09xl1 clean

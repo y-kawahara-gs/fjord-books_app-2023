@@ -1,0 +1,16 @@
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/json-2.6.3/ext/json
+/home/y-kawahara/.rbenv/versions/3.4.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-okk0ku sitelibdir\=./.gem.20251007-106966-okk0ku clean
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-okk0ku sitelibdir\=./.gem.20251007-106966-okk0ku
+make: Nothing to be done for 'all'.
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-okk0ku sitelibdir\=./.gem.20251007-106966-okk0ku install
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-okk0ku sitelibdir\=./.gem.20251007-106966-okk0ku clean

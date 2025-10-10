@@ -1,0 +1,18 @@
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/home/y-kawahara/.rbenv/versions/3.4.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-b206mc sitelibdir\=./.gem.20251007-106966-b206mc clean
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-b206mc sitelibdir\=./.gem.20251007-106966-b206mc
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-b206mc sitelibdir\=./.gem.20251007-106966-b206mc install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20251007-106966-b206mc/skiptrace/internal
+
+current directory: /home/y-kawahara/fjord-books_app-2023/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20251007-106966-b206mc sitelibdir\=./.gem.20251007-106966-b206mc clean
