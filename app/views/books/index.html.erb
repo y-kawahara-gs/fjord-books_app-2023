@@ -1,16 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t :Books %></h1>
+<h1><%= t '.title' %></h1>
 
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-    <% showthisbook = t :Showthisbook %>
-      <%= link_to showthisbook, book %>
+    <% show_this_book = t :show_this_book %>
+      <%= link_to show_this_book, book %>
     </p>
   <% end %>
 </div>
 
-<% newbook = t :Newbook %>
-<%= link_to newbook, new_book_path %>
+<% new_book = t :new_book %>
+<%= link_to new_book, new_book_path %>

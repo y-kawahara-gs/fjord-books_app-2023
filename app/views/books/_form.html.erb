@@ -12,30 +12,30 @@
   <% end %>
 
   <div>
-    <% title = t :Title %>
+    <% title = t :title %>
     <%= form.label :title, title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <% memo = t :Memo %>
+    <% memo = t :memo %>
     <%= form.label :memo, memo, style: "display: block" %>
     <%= form.text_area :memo %>
   </div>
 
   <div>
-    <% author = t :Author %>
+    <% author = t :author %>
     <%= form.label :author, author, style: "display: block" %>
     <%= form.text_field :author %>
   </div>
 
   <div>
-    <% picture = t :Picture %>
-    <%= form.label :picture, picture,style: "display: block" %>
+    <% picture = t :picture %>
+    <%= form.label :picture, picture, style: "display: block" %>
     <%= form.file_field :picture %>
   </div>
 
   <div>
-    <%= form.submit t :Updatebook %>
+    <%= form.submit t '.update_book' %>
   </div>
 <% end %>

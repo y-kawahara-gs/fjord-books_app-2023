@@ -29,22 +29,24 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  show_this_book: "Show this book"
-  back_to_books: "Back to books"
-  new_book: "New book"
-  edit_this_book: "Edit this book"
-  title: "Title"
-  memo: "Memo"
-  author: "Author"
-  picture: "Picture"
+ja:
+  show_this_book: "本を見る"
+  back_to_books: "本棚に戻る"
+  edit_this_book: "この本を編集する"
+  new_book: "新しい本"
+  title: "タイトル"
+  memo: "メモ"
+  author: "著者"
+  picture: "写真"
 
-  books:  
+  books:
     index:
-      title: "Books"
+      title: "本棚"
     form:
-      update_book: "Update book"
+      update_book: '本を更新する'
     edit:
-      title: "Edit this book"
+      title: "本の変更"
     show:
-      destroy_this_book: "Destroy this book"
+      destroy_this_book: "この本を削除する"
+
+

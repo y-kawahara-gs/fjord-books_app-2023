@@ -1,12 +1,12 @@
-<h1><%= t :Editingbook %></h1>
+<h1><%= t '.title' %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <div>
-  <% showthisbook = t :Showthisbook %>
-  <% backtobooks = t :Backtobooks %>
-  <%= link_to showthisbook, @book %> |
-  <%= link_to backtobooks, books_path %>
+  <% show_this_book = t :show_this_book %>
+  <% back_to_books = t :back_to_books %>
+  <%= link_to show_this_book, @book %> |
+  <%= link_to back_to_books, books_path %>
 </div>
