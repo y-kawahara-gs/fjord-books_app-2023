@@ -6,11 +6,9 @@
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-    <% show_this_book = t :show_this_book %>
-      <%= link_to show_this_book, book %>
+      <%= link_to t("show_this_book"), book %>
     </p>
   <% end %>
 </div>
 
-<% new_book = t :new_book %>
-<%= link_to new_book, new_book_path %>
+<%= link_to t("new_book"), new_book_path %>
