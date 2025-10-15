@@ -48,3 +48,33 @@ en:
       title: "Edit this book"
     show:
       destroy_this_book: "Destroy this book"
+en:
+  activerecord:
+    models:
+      book: "book"
+    attributes:
+      book:
+        title: "Title"
+        memo: "Memo"
+        author: "Author"
+        picture: "Picture"
+  books:
+    index:
+      title: "Books"
+    form:
+      update_book: "Update book"
+    edit:
+      title: "Update book"
+    show:
+      destroy_this_book: "Destroy this book"
+    create:
+      success: "Book was successfully create."
+    update:
+      success: "Book was successfully update."
+    destroy:
+      success: "Book was successfully destroy."
+
+  show_this_book: "Show this book"
+  back_to_books: "Back to books"
+  edit_this_book: "Edit this book"
+  new_book: "New book"
