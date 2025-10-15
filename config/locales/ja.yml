@@ -30,15 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 ja:
-  show_this_book: "本を見る"
-  back_to_books: "本棚に戻る"
-  edit_this_book: "この本を編集する"
-  new_book: "新しい本"
-  title: "タイトル"
-  memo: "メモ"
-  author: "著者"
-  picture: "写真"
-
+  activerecord:
+    models:
+      book: "本"
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "写真"
   books:
     index:
       title: "本棚"
@@ -48,5 +48,7 @@ ja:
       title: "本の変更"
     show:
       destroy_this_book: "この本を削除する"
-
-
+  show_this_book: "本を見る"
+  back_to_books: "本棚に戻る"
+  edit_this_book: "この本を編集する"
+  new_book: "新しい本"
