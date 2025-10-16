@@ -28,26 +28,6 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
-en:
-  show_this_book: "Show this book"
-  back_to_books: "Back to books"
-  new_book: "New book"
-  edit_this_book: "Edit this book"
-  title: "Title"
-  memo: "Memo"
-  author: "Author"
-  picture: "Picture"
-
-  books:  
-    index:
-      title: "Books"
-    form:
-      update_book: "Update book"
-    edit:
-      title: "Edit this book"
-    show:
-      destroy_this_book: "Destroy this book"
 en:
   activerecord:
     models:
