@@ -46,11 +46,11 @@ en:
     show:
       destroy_this_book: "Destroy this book"
     create:
-      success: "%{content} was successfully create."
+      success: "%{model} was successfully create."
     update:
-      success: "%{content} was successfully update."
+      success: "%{model} was successfully update."
     destroy:
-      success: "%{content} was successfully destroy."
+      success: "%{model} was successfully destroy."
 
   show_this_book: "Show this book"
   back_to_books: "Back to books"
