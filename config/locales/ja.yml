@@ -42,8 +42,6 @@ ja:
   books:
     index:
       title: "本棚"
-    form:
-      update_book: '本を更新する'
     edit:
       title: "本の変更"
     show:

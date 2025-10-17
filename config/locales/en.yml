@@ -41,8 +41,6 @@ en:
   books:
     index:
       title: "Books"
-    form:
-      update_book: "Update book"
     edit:
       title: "Update book"
     show:
