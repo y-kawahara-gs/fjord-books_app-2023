@@ -49,11 +49,11 @@ ja:
     show:
       destroy_this_book: "この本を削除する"
     create:
-      success: "本の作成に成功しました"
+      success: "%{content}の作成に成功しました"
     update:
-      success: "本の更新に成功しました"
+      success: "%{content}の更新に成功しました"
     destroy:
-      success: "本の削除に成功しました"
+      success: "%{content}の削除に成功しました"
 
   show_this_book: "本を見る"
   back_to_books: "本棚に戻る"
