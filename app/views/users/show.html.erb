@@ -1,0 +1,8 @@
+<h1><%= t("views.common.title_info", name: User.model_name.human) %></h1>
+
+<table>
+  <tr><th><%= t("user_details.e_mail") %></th><td><%= @user.email %></td></tr>
+  <tr><th><%= t("user_details.post_code") %></th><td><%= @user.post_code %></td></tr>
+  <tr><th><%= t("user_details.address") %></th><td><%= @user.address %></td></tr>
+  <tr><th><%= t("user_details.profile") %></th><td><%= @user.profile %></td></tr>
+</table>
