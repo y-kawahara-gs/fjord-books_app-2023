@@ -84,8 +84,10 @@ end
 gem 'carrierwave'
 gem 'kaminari'
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'
 
-gem "devise-i18n", "~> 1.15"
+gem 'devise-i18n', '~> 1.15'
 
-gem "rails-i18n", "~> 7.0"
+gem 'rails-i18n', '~> 7.0'
+
+gem 'letter_opener_web', '~> 3.0'

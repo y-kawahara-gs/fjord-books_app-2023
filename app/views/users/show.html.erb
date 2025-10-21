@@ -6,3 +6,5 @@
   <tr><th><%= t("user_details.address") %></th><td><%= @user.address %></td></tr>
   <tr><th><%= t("user_details.profile") %></th><td><%= @user.profile %></td></tr>
 </table>
+
+<%= link_to t('devise.shared.links.back'), users_path, class: "navbar-link" %>
