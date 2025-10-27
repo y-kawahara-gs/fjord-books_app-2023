@@ -7,6 +7,11 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  user_details:
+    e_mail: Eメール
+    post_code: 郵便番号
+    address: 住所
+    profile: 自己紹介
   date:
     abbr_day_names:
     - 日
@@ -120,6 +125,8 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+    state:
+      sign_out: ログアウト
   number:
     currency:
       format:
@@ -192,6 +199,7 @@ ja:
       title_index: "%{name}の一覧"
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
+      title_info: "%{name}情報"
       error: エラー
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
     pagination:
