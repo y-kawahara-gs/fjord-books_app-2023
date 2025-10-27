@@ -325,18 +325,18 @@ DEPENDENCIES
   capybara
   carrierwave
   debug
-  devise (~> 4.9)
-  devise-i18n (~> 1.15)
+  devise
+  devise-i18n
   erb_lint
   faker
   i18n_generators
   importmap-rails
   jbuilder
   kaminari
-  letter_opener_web (~> 3.0)
+  letter_opener_web
   puma
   rails (~> 7.0.6)
-  rails-i18n (~> 7.0)
+  rails-i18n
   rubocop (~> 1.45.1)
   rubocop-fjord
   rubocop-rails
