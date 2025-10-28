@@ -1,0 +1,9 @@
+<h2>新しいコメント</h2>
+<%= form_with(model: [commentable, comment]) do |form| %>
+  <div>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
