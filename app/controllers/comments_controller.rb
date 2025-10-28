@@ -9,12 +9,10 @@ class CommentsController < ApplicationController
 
     @comment.user = current_user
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
-      else
-        redirect_to @commentable if @comment.save
-      end
+    if @comment.save
+      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+    else
+      redirect_to @commentable
     end
   end
 
@@ -22,9 +20,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.find(params[:id])
     @comment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human) }
-    end
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
