@@ -25,7 +25,6 @@ class ReportsController < ApplicationController
   # POST /reports
   def create
     @report = current_user.reports.build(report_params)
-    # Report.new(report_params)
 
     if @report.save
       redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human)
