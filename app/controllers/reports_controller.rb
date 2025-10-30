@@ -64,8 +64,9 @@ class ReportsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def correct_user
-    redirect_to reports_path unless current_user == @report.user 
+    redirect_to reports_path unless current_user == @report.user
   end
+
   def set_report
     @report = Report.find(params[:id])
   end
