@@ -20,24 +20,26 @@ class ReportsController < ApplicationController
   def edit; end
 
   def create
-    @report = current_user.reports.new(report_params)
+    ActiveRecord::Base.transaction do
+      @report = current_user.reports.new(report_params)
 
-    if @report.save
-      set_mention
-      redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
-    else
+      @report.save!
+      set_mention!
+    rescue ActiveRecord::RecordInvalid
       render :new, status: :unprocessable_entity
     end
+    redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
   end
 
   def update
-    if @report.update(report_params)
+    ActiveRecord::Base.transaction do
+      @report.update!(report_params)
       @report.active_mentions.destroy_all
-      set_mention
-      redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
-    else
+      set_mention!
+    rescue ActiveRecord::RecordInvalid
       render :edit, status: :unprocessable_entity
     end
+    redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
   end
 
   def destroy
@@ -56,15 +58,15 @@ class ReportsController < ApplicationController
     params.require(:report).permit(:title, :content)
   end
 
-  def set_mention
+  def set_mention!
     urls = URI.extract(@report.content, ['http'])
     urls.map do |url|
       next unless url.match?(%r{http://127.0.0.1:3000/reports/})
 
       target_id = URI.parse(url).path.split('/').last
-      mentioned_report = Report.find_by(id: target_id)
-      next if @report.id == target_id.to_i || mentioned_report == nil
+      next if @report.id == target_id.to_i
 
+      mentioned_report = Report.find_by(id: target_id)
       @report.active_mentions.create(mentioned: mentioned_report)
     end
   end
