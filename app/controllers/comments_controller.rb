@@ -3,6 +3,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_commentable
+  before_action :correct_user, only: %i[destroy]
 
   def create
     @comment = @commentable.comments.build(comment_params)
@@ -24,6 +25,11 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def correct_user
+    @comment = @commentable.comments.find(params[:id])
+    redirect_to reports_path unless current_user == @comment.user
+  end
 
   def comment_params
     params.require(:comment).permit(:content)
