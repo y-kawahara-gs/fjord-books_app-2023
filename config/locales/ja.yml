@@ -216,6 +216,9 @@ ja:
       create: コメントする
       delete: 削除
       no_comments: コメントはまだありません
+    mentions:
+      title: "この%{mentioned}を言及している%{mentioner}"
+      no_mentions: "この%{mentioned}を言及している%{mentioner}はありません"
   # devise-i18n-viewsをオーバーライド
   devise:
     registrations:
