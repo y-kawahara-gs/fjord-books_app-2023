@@ -64,7 +64,8 @@ class ReportsController < ApplicationController
       next unless url.match?(%r{http://127.0.0.1:3000/reports/})
 
       target_id = URI.parse(url).path.split('/').last
-      next if @report.id == target_id.to_i
+      raise t('errors.messages.mention_yourself', name: Report.model_name.human) if @report.id == target_id.to_i
+      raise  t('errors.messages.mention_no_exist', name: Report.model_name.human) unless Report.exists?(target_id)
 
       mentioned_report = Report.find_by(id: target_id)
       @report.active_mentions.create(mentioned: mentioned_report)
