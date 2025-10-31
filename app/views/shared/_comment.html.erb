@@ -1,0 +1,31 @@
+<h2><%= Comment.model_name.human %></h2>
+
+<div id="comments" class="index-items">
+  <% comments.each do |comment| %>
+    <div class="show-item">
+      <p>
+      <strong><%= Comment.human_attribute_name(:post_date_and_time) %>:</strong>
+      <%= l comment.updated_at, format: :short %>
+      </p>
+
+      <p>
+      <strong><%= Comment.human_attribute_name(:post_user) %>:</strong>
+      <% if comment.user.name.present? %>
+        <%= comment.user.name %>
+      <% else %>
+        <%= comment.user.email %>
+      <% end %>
+      </p>
+
+      <p>
+      <%= comment.content %>
+      </p>
+
+      <p>
+      <% if current_user.id == comment.user_id %>
+        <%= button_to t('views.common.destroy', name: Comment.model_name.human), [comment.commentable, comment], method: :delete %>
+      <% end %>
+      </p>
+    </div>
+  <% end %>
+</div>
