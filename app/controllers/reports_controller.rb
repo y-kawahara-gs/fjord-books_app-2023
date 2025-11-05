@@ -64,8 +64,8 @@ class ReportsController < ApplicationController
       next unless url.match?(%r{http://127.0.0.1:3000/reports/})
 
       target_id = URI.parse(url).path.split('/').last
-      next if @report.id == target_id.to_i || Report.exists?(target_id) == nil
-      mentioned_report = Report.find_by(id: target_id)
+      next if @report.id == target_id.to_i
+      mentioned_report = Report.find(target_id)
       @report.active_mentions.create!(mentioned: mentioned_report)
     end
   end
