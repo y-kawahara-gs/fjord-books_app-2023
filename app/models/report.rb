@@ -22,14 +22,15 @@ class Report < ApplicationRecord
   end
 
   def create_mention!
-    urls = URI.extract(self.content, ['http'])
+    urls = URI.extract(content, ['http'])
     urls.map do |url|
       next unless url.match?(%r{http://127.0.0.1:3000/reports/})
 
       target_id = URI.parse(url).path.split('/').last
-      next if self.id == target_id.to_i
+      next if id == target_id.to_i
+
       mentioned_report = Report.find(target_id)
-      self.active_mentions.create!(mentioned: mentioned_report)
+      active_mentions.create!(mentioned: mentioned_report)
     end
   end
 end

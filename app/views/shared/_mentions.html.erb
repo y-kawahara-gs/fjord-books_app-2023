@@ -1,5 +1,5 @@
 <div class="comments-container">
-  <strong><%= t('.title', mentioned: "日報", mentioner: "日報") %></strong>
+  <strong><%= t('.title', mentioned: Report.model_name.human, mentioner: Report.model_name.human ) %></strong>
   <% if mentions.present? %>
     <ul>
       <% mentions.each do |report| %>
@@ -12,6 +12,6 @@
       <% end %>
     </ul>
   <% else %>
-    <%= t('.no_mentions', mentioned: "日報", mentioner: "日報") %>
+    <%= t('.no_mentions', mentioned: Report.model_name.human , mentioner: Report.model_name.human ) %>
   <% end %>
 </div>
