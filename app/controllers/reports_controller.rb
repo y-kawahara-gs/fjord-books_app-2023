@@ -24,7 +24,7 @@ class ReportsController < ApplicationController
       @report = current_user.reports.new(report_params)
 
       @report.save!
-      set_mention!
+      @report.create_mention!
     rescue ActiveRecord::RecordInvalid
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ReportsController < ApplicationController
     ActiveRecord::Base.transaction do
       @report.update!(report_params)
       @report.active_mentions.destroy_all
-      set_mention!
+      @report.create_mention!
     rescue ActiveRecord::RecordInvalid
       render :edit, status: :unprocessable_entity
     end
@@ -56,17 +56,5 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
-  end
-
-  def set_mention!
-    urls = URI.extract(@report.content, ['http'])
-    urls.map do |url|
-      next unless url.match?(%r{http://127.0.0.1:3000/reports/})
-
-      target_id = URI.parse(url).path.split('/').last
-      next if @report.id == target_id.to_i
-      mentioned_report = Report.find(target_id)
-      @report.active_mentions.create!(mentioned: mentioned_report)
-    end
   end
 end
