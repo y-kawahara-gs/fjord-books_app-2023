@@ -30,9 +30,6 @@ class ReportsController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     end
-  rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound => e
-    @report.errors.add(:base, e.message)
-    render :new, status: :unprocessable_entity
   end
 
   def update
@@ -45,9 +42,6 @@ class ReportsController < ApplicationController
         render :edit, status: :unprocessable_entity
       end
     end
-  rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound => e
-    @report.errors.add(:base, e.message)
-    render :edit, status: :unprocessable_entity
   end
 
   def destroy
