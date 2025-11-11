@@ -23,6 +23,10 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
+  def recommend
+    "I recommend #{title}."
+  end
+
   private
 
   MENTION_REGEXP = %r{http://localhost:3000/reports/(\d+)}

@@ -3,7 +3,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test '#greet' do
+    user = users(:alice)
+    assert_equal 'Hi! I`m Alice.', user.greet
+  end
 end

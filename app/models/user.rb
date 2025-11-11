@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def name_or_email
     name.presence || email
   end
+
+  def greet
+    "Hi! I`m #{name}."
+  end
 end

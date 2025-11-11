@@ -4,44 +4,51 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @report = reports(:one)
+    visit root_url
+    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'パスワード', with: 'Password!'
+    click_button 'ログイン'
+    assert_text 'ログインしました'
   end
 
-  test 'visiting the index' do
+  test 'create report' do
     visit reports_url
-    assert_selector 'h1', text: 'Reports'
+    click_on '日報の新規作成'
+
+    fill_in 'タイトル', with: '今日の日報'
+    fill_in '内容', with: '色んなことをした'
+    click_on '登録する'
+
+    assert_text '日報が作成されました。'
+    assert_text '今日の日報'
+    assert_text '色んなことをした'
+    click_on '日報の一覧に戻る'
   end
 
-  test 'should create report' do
-    visit reports_url
-    click_on 'New report'
+  test 'update report' do
+    report = reports(:alice_report)
+    visit report_url(report)
+    assert_text 'About muscle'
+    assert_text 'memo'
+    click_on 'この日報を編集'
+    fill_in 'タイトル', with: '筋肉について'
+    fill_in '内容', with: 'メモ'
+    click_on '更新する'
 
-    fill_in 'Content', with: @report.content
-    fill_in 'Title', with: @report.title
-    fill_in 'User', with: @report.user_id
-    click_on 'Create Report'
-
-    assert_text 'Report was successfully created'
-    click_on 'Back'
+    assert_text '日報が更新されました。'
+    visit report_url(report)
+    assert_text  '筋肉について'
+    assert_text  'メモ'
+    sleep 2
   end
 
-  test 'should update Report' do
-    visit report_url(@report)
-    click_on 'Edit this report', match: :first
-
-    fill_in 'Content', with: @report.content
-    fill_in 'Title', with: @report.title
-    fill_in 'User', with: @report.user_id
-    click_on 'Update Report'
-
-    assert_text 'Report was successfully updated'
-    click_on 'Back'
-  end
-
-  test 'should destroy Report' do
-    visit report_url(@report)
-    click_on 'Destroy this report', match: :first
-
-    assert_text 'Report was successfully destroyed'
+  test 'destroy report' do
+    report = reports(:alice_report)
+    visit report_url(report)
+    assert_text 'About muscle'
+    assert_text 'memo'
+    click_on 'この日報を削除'
+    assert_selector 'h1', text: '日報の一覧'
+    refute_text 'About muscle'
   end
 end
