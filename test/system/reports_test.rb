@@ -39,7 +39,6 @@ class ReportsTest < ApplicationSystemTestCase
     visit report_url(report)
     assert_text  '筋肉について'
     assert_text  'メモ'
-    sleep 2
   end
 
   test 'destroy report' do
