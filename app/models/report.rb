@@ -30,7 +30,7 @@ class Report < ApplicationRecord
       next if id == target_id.to_i
       next unless Report.exists?(target_id)
 
-      mentioned_report = Report.find_by(id: target_id)
+      mentioned_report = Report.find(target_id)
       active_mentions.create!(mentioned: mentioned_report)
     end
   end
