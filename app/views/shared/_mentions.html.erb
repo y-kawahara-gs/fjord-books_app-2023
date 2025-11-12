@@ -1,0 +1,17 @@
+<div class="comments-container">
+  <strong><%= t('.title', mentioned: Report.model_name.human, mentioner: Report.model_name.human ) %></strong>
+  <% if mentions.present? %>
+    <ul>
+      <% mentions.each do |report| %>
+        <li>
+          <%= link_to report.title, report %>
+          <small>
+            (<%= link_to report.user.name_or_email, report.user %> - <%= l report.created_at, format: :short %>)
+          </small>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <%= t('.no_mentions', mentioned: Report.model_name.human , mentioner: Report.model_name.human ) %>
+  <% end %>
+</div>
