@@ -3,8 +3,11 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test '#greet' do
-    user = users(:alice)
-    assert_equal 'Hi! I`m Alice.', user.greet
+  test '#name_or_email' do
+    name_user = users(:name_user)
+    no_name_user = users(:no_name_user)
+
+    assert_equal 'Alice', name_user.name_or_email
+    assert_equal 'bob@example.com', no_name_user.name_or_email
   end
 end

@@ -10,7 +10,12 @@
 #  title: MyString
 #  content: MyText
 
-alice_report:
-  user: alice
-  title: 'About muscle'
-  content: 'memo'
+editable_report:
+  user: editable_user
+  title: 'タイトル'
+  content: '内容'
+
+sample_report:
+  user: name_user
+  title: 'タイトル'
+  content: '内容'

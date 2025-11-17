@@ -26,10 +26,10 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test 'update report' do
-    report = reports(:alice_report)
+    report = reports(:sample_report)
     visit report_url(report)
-    assert_text 'About muscle'
-    assert_text 'memo'
+    assert_text 'タイトル'
+    assert_text '内容'
     click_on 'この日報を編集'
     fill_in 'タイトル', with: '筋肉について'
     fill_in '内容', with: 'メモ'
@@ -42,10 +42,10 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test 'destroy report' do
-    report = reports(:alice_report)
+    report = reports(:sample_report)
     visit report_url(report)
-    assert_text 'About muscle'
-    assert_text 'memo'
+    assert_text 'タイトル'
+    assert_text '内容'
     click_on 'この日報を削除'
     assert_text '日報が削除されました。'
     assert_selector 'h1', text: '日報の一覧'

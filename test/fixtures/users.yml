@@ -10,7 +10,24 @@
 #two: {}
 # column: value
 
-alice:
+name_user:
   email: 'alice@example.com'
   name: 'Alice'
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Password!') %>
+
+no_name_user:
+  email: 'bob@example.com'
+  name: ""
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Password!') %>
+
+editable_user:
+  email: 'carol@example.com'
+  name: 'Carol'
+
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Password!') %>
+
+not_editable_user:
+  email: 'dave@example.com'
+  name: 'Dave'
+
   encrypted_password: <%= Devise::Encryptor.digest(User, 'Password!') %>
