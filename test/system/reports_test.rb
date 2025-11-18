@@ -26,7 +26,7 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test 'update report' do
-    report = reports(:sample_report)
+    report = reports(:system_test_report)
     visit report_url(report)
     assert_text 'タイトル'
     assert_text '内容'
@@ -42,13 +42,13 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test 'destroy report' do
-    report = reports(:sample_report)
+    report = reports(:system_test_report)
     visit report_url(report)
     assert_text 'タイトル'
     assert_text '内容'
     click_on 'この日報を削除'
     assert_text '日報が削除されました。'
     assert_selector 'h1', text: '日報の一覧'
-    refute_text 'About muscle'
+    refute_text '内容'
   end
 end

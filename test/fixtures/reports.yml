@@ -10,12 +10,12 @@
 #  title: MyString
 #  content: MyText
 
-editable_report:
-  user: editable_user
+test_report:
+  user: model_test_user
   title: 'タイトル'
   content: '内容'
 
-sample_report:
-  user: name_user
+system_test_report:
+  user: system_test_user
   title: 'タイトル'
   content: '内容'

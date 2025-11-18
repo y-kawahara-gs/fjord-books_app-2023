@@ -4,17 +4,21 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   def setup
-    @edit_user = users(:editable_user)
-    @not_edit_user = users(:not_editable_user)
-    @report = reports(:editable_report)
+    @test_user = users(:model_test_user)
+    @test_user_failing = users(:system_test_user)
+    @test_report = reports(:test_report)
   end
 
   test '#editable?' do
-    assert @report.editable?(@edit_user)
-    assert_not @report.editable?(@not_edit_user)
+    test_report = @test_report
+
+    assert test_report.editable?(@test_user)
+    assert_not test_report.editable?(@test_user_failing)
   end
 
   test '#created_on' do
-    assert_equal @report.created_at.to_date, @report.created_on
+    test_report = @test_report
+    test_report.created_at =  [Thu, 06 Nov 2025 10:25:09.180219000 JST +09:00]
+    assert_equal "a", test_report.created_on
   end
 end
