@@ -23,8 +23,29 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal "2025-11-18", "#{test_report.created_on}"
   end
 
-  test '#mention' do
-    test_report = @test_report
-    test_report.content = ''
+  test '#save_mentions' do
+    test_report1 = @test_report
+    test_report2 = reports(:test_report2)
+    test_report3 = reports(:test_report3)
+    test_report1.content = "http://localhost:3000/reports/#{test_report2.id}"
+    test_report1.save
+    test_report1.reload
+    test_report2.reload
+    assert_equal test_report1, test_report2.mentioned_reports[0]
+
+    test_report1.content = "http://localhost:3000/reports/#{test_report3.id}"
+    test_report1.save
+    test_report1.reload
+    test_report2.reload
+
+    refute test_report2.mentioned_reports[0]
+    assert_equal test_report1, test_report3.mentioned_reports[0]
+
+    test_report1.content = "ないよう１"
+    test_report1.save
+    test_report1.reload
+    test_report3.reload
+    refute test_report1.mentioning_reports[0]
+
   end
 end

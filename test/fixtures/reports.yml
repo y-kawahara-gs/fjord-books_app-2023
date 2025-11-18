@@ -23,4 +23,9 @@ test_report1:
 test_report2:
   user: test_user2
   title: 'たいとる２'
-  content: '内容2'
+  content: 'ないよう2'
+
+test_report3:
+  user: test_user2
+  title: 'たいとる３'
+  content: 'ないよう３'
