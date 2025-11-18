@@ -5,7 +5,7 @@ require 'application_system_test_case'
 class ReportsTest < ApplicationSystemTestCase
   setup do
     visit root_url
-    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'Eメール', with: 'alice@test.com'
     fill_in 'パスワード', with: 'Password!'
     click_button 'ログイン'
     assert_text 'ログインしました'
@@ -44,11 +44,12 @@ class ReportsTest < ApplicationSystemTestCase
   test 'destroy report' do
     report = reports(:system_test_report)
     visit report_url(report)
-    assert_text 'タイトル'
-    assert_text '内容'
+    assert_text 'タイトル1'
+    assert_text '内容1'
     click_on 'この日報を削除'
     assert_text '日報が削除されました。'
     assert_selector 'h1', text: '日報の一覧'
-    refute_text '内容'
+    refute_text 'タイトル1'
+    refute_text '内容1'
   end
 end

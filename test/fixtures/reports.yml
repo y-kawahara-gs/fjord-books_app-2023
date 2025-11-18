@@ -10,12 +10,17 @@
 #  title: MyString
 #  content: MyText
 
-test_report:
-  user: model_test_user
-  title: 'タイトル'
-  content: '内容'
-
 system_test_report:
-  user: system_test_user
-  title: 'タイトル'
-  content: '内容'
+  user: login_user
+  title: 'タイトル1'
+  content: '内容1'
+
+test_report1:
+  user: test_user1
+  title: 'たいとる１'
+  content: 'ないよう１'
+
+test_report2:
+  user: test_user2
+  title: 'たいとる２'
+  content: '内容2'

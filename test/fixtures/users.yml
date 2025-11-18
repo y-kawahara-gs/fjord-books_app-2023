@@ -10,10 +10,13 @@
 #two: {}
 # column: value
 
-system_test_user:
-  email: 'alice@example.com'
+login_user:
+  email: 'alice@test.com'
   name: 'Alice'
   encrypted_password: <%= Devise::Encryptor.digest(User, 'Password!') %>
 
-model_test_user:
-  email: 'abc@example.com'
+test_user1:
+  email: 'abc@test.com'
+
+test_user2:
+  email: 'def@test.com'
