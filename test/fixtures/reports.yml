@@ -29,3 +29,8 @@ test_report3:
   user: test_user2
   title: 'たいとる３'
   content: 'ないよう３'
+
+test_report4:
+  user: test_user1
+  title: 'たいとる４'
+  content: 'たいとる４'

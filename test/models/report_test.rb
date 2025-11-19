@@ -19,33 +19,35 @@ class ReportTest < ActiveSupport::TestCase
 
   test '#created_on' do
     test_report = @test_report
-    test_report.created_at = "Thu, 18 Nov 2025 11:12:04.733175000 JST +09:00"
-    assert_equal "2025-11-18", "#{test_report.created_on}"
+    test_report.created_at = 'Thu, 18 Nov 2025 11:12:04.733175000 JST +09:00'
+    assert_equal '2025-11-18', test_report.created_on.to_s
   end
 
   test '#save_mentions' do
     test_report1 = @test_report
     test_report2 = reports(:test_report2)
     test_report3 = reports(:test_report3)
-    test_report1.content = "http://localhost:3000/reports/#{test_report2.id}"
+
+    test_report1.content = "http://localhost:3000/reports/#{test_report2.id}と\nhttp://localhost:3000/reports/#{test_report3.id}はとても参考になりました。"
     test_report1.save
-    test_report1.reload
-    test_report2.reload
-    assert_equal test_report1, test_report2.mentioned_reports[0]
+    assert_includes test_report2.mentioned_reports, test_report1
+    assert_includes test_report1.mentioning_reports, test_report2
+    assert_includes test_report3.mentioned_reports, test_report1
+    assert_includes test_report1.mentioning_reports, test_report3
 
-    test_report1.content = "http://localhost:3000/reports/#{test_report3.id}"
-    test_report1.save
-    test_report1.reload
-    test_report2.reload
+    test_report4 = reports(:test_report4)
+    test_report4.active_mentions.create(mentioned: test_report2)
+    test_report4.content = "http://localhost:3000/reports/#{test_report3.id}はとても参考になりました。"
+    test_report4.save
+    assert_not_includes test_report2.mentioned_reports, test_report4
+    assert_not_includes test_report4.mentioning_reports, test_report2
+    assert_includes test_report3.mentioned_reports, test_report4
+    assert_includes test_report4.mentioning_reports, test_report3
 
-    refute test_report2.mentioned_reports[0]
-    assert_equal test_report1, test_report3.mentioned_reports[0]
-
-    test_report1.content = "ないよう１"
-    test_report1.save
-    test_report1.reload
-    test_report3.reload
-    refute test_report1.mentioning_reports[0]
-
+    test_report2.active_mentions.create(mentioned: test_report3)
+    test_report2.content = '今日は頑張りました。'
+    test_report2.save
+    assert_not_includes test_report3.mentioned_reports, test_report2
+    assert_not_includes test_report2.mentioning_reports, test_report3
   end
 end
