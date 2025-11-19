@@ -1,11 +1,36 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  content: MyText
+#one:
+#  user: one
+#  title: MyString
+#  content: MyText
 
-two:
-  user: two
-  title: MyString
-  content: MyText
+#two:
+#  user: two
+#  title: MyString
+#  content: MyText
+
+system_test_report:
+  user: login_user
+  title: 'タイトル1'
+  content: '内容1'
+
+test_report1:
+  user: test_user1
+  title: 'たいとる１'
+  content: 'ないよう１'
+
+test_report2:
+  user: test_user2
+  title: 'たいとる２'
+  content: 'ないよう2'
+
+test_report3:
+  user: test_user2
+  title: 'たいとる３'
+  content: 'ないよう３'
+
+test_report4:
+  user: test_user1
+  title: 'たいとる４'
+  content: 'たいとる４'
